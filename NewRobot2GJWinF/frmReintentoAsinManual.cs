@@ -40,9 +40,8 @@ namespace NewRobot2GJWinF
 
         private void btoReintento_Click(object sender, EventArgs e)
         {
-            int Contador = 0;
-            bool Reintentar = false;
-
+            //int Contador = 0;
+            
             try
             {
                 //Abrir el archivo de captura.
@@ -57,8 +56,6 @@ namespace NewRobot2GJWinF
 
                 while ((LineaCaptura = FileCaptura.ReadLine()) != null)
                 {
-                    Reintentar = false;
-
                     char tmpChar = '\t';
                     char[] Separador = new char[] { tmpChar };
                     string[] strLineArzay = LineaCaptura.Split(Separador, StringSplitOptions.RemoveEmptyEntries);
@@ -68,12 +65,11 @@ namespace NewRobot2GJWinF
                         rtbResultado.Text += strLineArzay[i] + "\t";
                     }
 
-                    rtbResultado.Text += "\n";
+                    //PerformActivity
+                    CapaSOA2GJ.CapaSOA2GJ objSOA = new CapaSOA2GJ.CapaSOA2GJ();
+                    objSOA.PerformActivity("domain", "admon", Convert.ToInt32(strLineArzay[0]), Convert.ToInt32(strLineArzay[2]));
 
-                    //Reliza perform Activity
-                    //CapaSOABizAgi objCapaSoa = new CapaSOABizAgi();
-                    //string sRespBA = objCapaSoa.IniciarPerformActivity("domain", "admon", objReconcimiento.IdCase, Convert.ToInt32(strLineArzay[2]));
-
+                    rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\n"; 
                 }
             }
             catch (Exception e1)
