@@ -69,7 +69,21 @@ namespace NewRobot2GJWinF
                     CapaSOA2GJ.CapaSOA2GJ objSOA = new CapaSOA2GJ.CapaSOA2GJ();
                     objSOA.PerformActivity("domain", "admon", Convert.ToInt32(strLineArzay[0]), Convert.ToInt32(strLineArzay[2]));
 
-                    rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\n"; 
+
+                    //Buscar soluciones en BDM.
+                    if (this.chkAplicaBDC.Checked == true)
+                    {
+                        KDBAsynch objAsy = new KDBAsynch(Convert.ToInt32(strLineArzay[2]), objSOA.CodeAnswer, objSOA.DescriptionAnswer, Convert.ToInt32(strLineArzay[0]));
+                        objAsy.RunSolution();
+                        if (objAsy.Retry == true)
+                            objSOA.PerformActivity("domain", "admon", Convert.ToInt32(strLineArzay[0]), Convert.ToInt32(strLineArzay[2]));
+
+                        rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\t" + "True" + "\t" + objAsy.Retry.ToString() + "\t" + objAsy.Log.ToString() + "\n";
+                    }
+                    else
+                    {
+                        rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\n";
+                    }
                 }
             }
             catch (Exception e1)
@@ -80,11 +94,6 @@ namespace NewRobot2GJWinF
             {
                 Console.WriteLine("Executing finally block.");
             }
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

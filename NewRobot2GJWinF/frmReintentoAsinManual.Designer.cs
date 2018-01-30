@@ -29,23 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btoExaminar = new System.Windows.Forms.Button();
+            this.chkAplicaBDC = new System.Windows.Forms.CheckBox();
+            this.rbRetryAsy = new System.Windows.Forms.RadioButton();
+            this.rbPerform = new System.Windows.Forms.RadioButton();
             this.tbExaminar = new System.Windows.Forms.TextBox();
-            this.rtbResultado = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btoReintento = new System.Windows.Forms.Button();
             this.RegTotal = new System.Windows.Forms.Label();
             this.lblRegTotal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btoExaminar = new System.Windows.Forms.Button();
+            this.rtbResultado = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPerform = new System.Windows.Forms.RadioButton();
-            this.rbRetryAsy = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkAplicaBDC);
             this.groupBox1.Controls.Add(this.rbRetryAsy);
             this.groupBox1.Controls.Add(this.rbPerform);
             this.groupBox1.Controls.Add(this.tbExaminar);
@@ -62,15 +64,39 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 
-            // btoExaminar
+            // chkAplicaBDC
             // 
-            this.btoExaminar.Location = new System.Drawing.Point(357, 32);
-            this.btoExaminar.Name = "btoExaminar";
-            this.btoExaminar.Size = new System.Drawing.Size(27, 22);
-            this.btoExaminar.TabIndex = 11;
-            this.btoExaminar.Text = "....";
-            this.btoExaminar.UseVisualStyleBackColor = true;
-            this.btoExaminar.Click += new System.EventHandler(this.btoExaminar_Click);
+            this.chkAplicaBDC.AutoSize = true;
+            this.chkAplicaBDC.Location = new System.Drawing.Point(156, 142);
+            this.chkAplicaBDC.Name = "chkAplicaBDC";
+            this.chkAplicaBDC.Size = new System.Drawing.Size(138, 17);
+            this.chkAplicaBDC.TabIndex = 47;
+            this.chkAplicaBDC.Text = "Aplicar Soluciones BDC";
+            this.chkAplicaBDC.UseVisualStyleBackColor = true;
+            // 
+            // rbRetryAsy
+            // 
+            this.rbRetryAsy.AutoSize = true;
+            this.rbRetryAsy.Enabled = false;
+            this.rbRetryAsy.Location = new System.Drawing.Point(156, 103);
+            this.rbRetryAsy.Name = "rbRetryAsy";
+            this.rbRetryAsy.Size = new System.Drawing.Size(107, 17);
+            this.rbRetryAsy.TabIndex = 46;
+            this.rbRetryAsy.Text = "Por [RetryAsinch]";
+            this.rbRetryAsy.UseVisualStyleBackColor = true;
+            // 
+            // rbPerform
+            // 
+            this.rbPerform.AutoSize = true;
+            this.rbPerform.Checked = true;
+            this.rbPerform.Enabled = false;
+            this.rbPerform.Location = new System.Drawing.Point(156, 77);
+            this.rbPerform.Name = "rbPerform";
+            this.rbPerform.Size = new System.Drawing.Size(120, 17);
+            this.rbPerform.TabIndex = 45;
+            this.rbPerform.TabStop = true;
+            this.rbPerform.Text = "Por [PerformActivity]";
+            this.rbPerform.UseVisualStyleBackColor = true;
             // 
             // tbExaminar
             // 
@@ -79,15 +105,16 @@
             this.tbExaminar.Size = new System.Drawing.Size(336, 20);
             this.tbExaminar.TabIndex = 10;
             // 
-            // rtbResultado
+            // label3
             // 
-            this.rtbResultado.BackColor = System.Drawing.SystemColors.MenuText;
-            this.rtbResultado.ForeColor = System.Drawing.Color.Lime;
-            this.rtbResultado.Location = new System.Drawing.Point(12, 236);
-            this.rtbResultado.Name = "rtbResultado";
-            this.rtbResultado.Size = new System.Drawing.Size(777, 280);
-            this.rtbResultado.TabIndex = 37;
-            this.rtbResultado.Text = "";
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(336, 23);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Ruta de Archivo";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -144,16 +171,25 @@
             this.lblRegTotal.Text = "Registros Archivo";
             this.lblRegTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // btoExaminar
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(336, 23);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Ruta de Archivo";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btoExaminar.Location = new System.Drawing.Point(357, 32);
+            this.btoExaminar.Name = "btoExaminar";
+            this.btoExaminar.Size = new System.Drawing.Size(27, 22);
+            this.btoExaminar.TabIndex = 11;
+            this.btoExaminar.Text = "....";
+            this.btoExaminar.UseVisualStyleBackColor = true;
+            this.btoExaminar.Click += new System.EventHandler(this.btoExaminar_Click);
+            // 
+            // rtbResultado
+            // 
+            this.rtbResultado.BackColor = System.Drawing.SystemColors.MenuText;
+            this.rtbResultado.ForeColor = System.Drawing.Color.Lime;
+            this.rtbResultado.Location = new System.Drawing.Point(12, 236);
+            this.rtbResultado.Name = "rtbResultado";
+            this.rtbResultado.Size = new System.Drawing.Size(777, 280);
+            this.rtbResultado.TabIndex = 37;
+            this.rtbResultado.Text = "";
             // 
             // groupBox2
             // 
@@ -162,29 +198,6 @@
             this.groupBox2.Size = new System.Drawing.Size(379, 218);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
-            // 
-            // rbPerform
-            // 
-            this.rbPerform.AutoSize = true;
-            this.rbPerform.Location = new System.Drawing.Point(156, 77);
-            this.rbPerform.Name = "rbPerform";
-            this.rbPerform.Size = new System.Drawing.Size(120, 17);
-            this.rbPerform.TabIndex = 45;
-            this.rbPerform.TabStop = true;
-            this.rbPerform.Text = "Por [PerformActivity]";
-            this.rbPerform.UseVisualStyleBackColor = true;
-            // 
-            // rbRetryAsy
-            // 
-            this.rbRetryAsy.AutoSize = true;
-            this.rbRetryAsy.Location = new System.Drawing.Point(156, 103);
-            this.rbRetryAsy.Name = "rbRetryAsy";
-            this.rbRetryAsy.Size = new System.Drawing.Size(107, 17);
-            this.rbRetryAsy.TabIndex = 46;
-            this.rbRetryAsy.TabStop = true;
-            this.rbRetryAsy.Text = "Por [RetryAsinch]";
-            this.rbRetryAsy.UseVisualStyleBackColor = true;
-            this.rbRetryAsy.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // frmReintentoAsinManual
             // 
@@ -218,5 +231,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbRetryAsy;
         private System.Windows.Forms.RadioButton rbPerform;
+        private System.Windows.Forms.CheckBox chkAplicaBDC;
     }
 }
