@@ -1,7 +1,10 @@
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.frmActulizacionData.resources
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.frmAnalisisAsincronas.resources
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.frmMenu.resources
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.frmReintentoAsinManual.resources
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.Properties.Resources.resources
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.csproj.GenerateResource.Cache
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\bin\Debug\NewRobot2GJWinF.exe.config
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\bin\Debug\NewRobot2GJWinF.exe
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\bin\Debug\NewRobot2GJWinF.pdb
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\bin\Debug\CapaSOA2GJ.dll
@@ -9,4 +12,3 @@ C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\Conso
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.csprojResolveAssemblyReference.cache
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.exe
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\obj\x86\Debug\NewRobot2GJWinF.pdb
-C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\ConsolaWinF\NewRobot2GJWinF\NewRobot2GJWinF\bin\Debug\NewRobot2GJWinF.exe.config

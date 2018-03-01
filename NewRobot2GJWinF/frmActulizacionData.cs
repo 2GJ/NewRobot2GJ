@@ -10,9 +10,9 @@ using System.IO;
 
 namespace NewRobot2GJWinF
 {
-    public partial class frmReintentoAsinManual : Form
+    public partial class frmActulizacionData : Form
     {
-        public frmReintentoAsinManual()
+        public frmActulizacionData()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace NewRobot2GJWinF
         private void btoReintento_Click(object sender, EventArgs e)
         {
             //int Contador = 0;
-            
+
             try
             {
                 //Abrir el archivo de captura.
@@ -62,39 +62,18 @@ namespace NewRobot2GJWinF
                     char[] Separador = new char[] { tmpChar };
                     string[] strLineArzay = LineaCaptura.Split(Separador, StringSplitOptions.RemoveEmptyEntries);
 
+
                     for (int i = 0; i < strLineArzay.Length; i++)
                     {
                         rtbResultado.Text += strLineArzay[i] + "\t";
                     }
 
-                    //PerformActivity
-                    CapaSOA2GJ.CapaSOA2GJ objSOA = new CapaSOA2GJ.CapaSOA2GJ();
-                    objSOA.PerformActivity("domain", "admon", Convert.ToInt32(strLineArzay[0]), Convert.ToInt32(strLineArzay[2]));
 
+                    KDBAsynch objAsy = new KDBAsynch(Convert.ToInt32(strLineArzay[2]), Convert.ToInt32(strLineArzay[0]));
+                    objAsy.RunActualizacion(strLineArzay);
 
-                    //Buscar soluciones en BDM.
-                    if (this.chkAplicaBDC.Checked == true)
-                    {
-                        KDBAsynch objAsy = new KDBAsynch(Convert.ToInt32(strLineArzay[2]), objSOA.CodeAnswer, objSOA.DescriptionAnswer, Convert.ToInt32(strLineArzay[0]));
-                        objAsy.RunSolution();
-                        if (objAsy.Retry == true)
-                            objSOA.PerformActivity("domain", "admon", Convert.ToInt32(strLineArzay[0]), Convert.ToInt32(strLineArzay[2]));
-
-                        if (this.chkLogActData.Checked == true && objAsy.GenUpdData == true)
-                        {
-                            rtActData.Text += objAsy.LogUpdData.ToString();
-                        }
-                        rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\t" + "True" + "\t" + objAsy.Retry.ToString() + "\t" + objAsy.Log.ToString() + "\n";
-                    }
-                    else
-                    {
-                        rtbResultado.Text += objSOA.CodeAnswer + ":" + objSOA.DescriptionAnswer + "\n";
-                    }
-
-                    RegEje += 1;
-                    RegEjecutados.Text = RegEje.ToString();
-
-                    this.Update();
+                    rtbResultado.Text += objAsy.Log + "\t";
+                   
                 }
             }
             catch (Exception e1)
@@ -105,15 +84,6 @@ namespace NewRobot2GJWinF
             {
                 Console.WriteLine("Executing finally block.");
             }
-        }
-
-        private void chkLogActData_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.chkLogActData.Checked == true)
-                this.rtActData.Visible = true;
-            else
-                this.rtActData.Visible = false;
-
         }
     }
 }

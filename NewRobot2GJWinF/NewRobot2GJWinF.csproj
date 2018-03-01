@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmActulizacionData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActulizacionData.Designer.cs">
+      <DependentUpon>frmActulizacionData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnalisisAsincronas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnalisisAsincronas.Designer.cs">
+      <DependentUpon>frmAnalisisAsincronas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
     <Compile Include="KDBAsynch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmActulizacionData.resx">
+      <DependentUpon>frmActulizacionData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnalisisAsincronas.resx">
+      <DependentUpon>frmAnalisisAsincronas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,7 +113,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

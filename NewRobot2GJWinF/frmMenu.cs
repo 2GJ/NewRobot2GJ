@@ -21,5 +21,17 @@ namespace NewRobot2GJWinF
             Form objValAsinReco = new frmReintentoAsinManual();
             objValAsinReco.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form objAnaAsin = new frmAnalisisAsincronas();
+            objAnaAsin.Show();
+        }
+
+        private void btoActInfo_Click(object sender, EventArgs e)
+        {
+            Form objValAsinReco = new frmActulizacionData();
+            objValAsinReco.Show();
+        }
     }
 }
