@@ -57,7 +57,7 @@ namespace NewRobot2GJWinF
                 Int64 RegEje = 0;
 
                 if (this.chkLogActData.Checked)
-                    rtActData.Text += "IDTASK" + "\t" + "RADNUMBER" + "\t" + "IDTASK" +"\t" +  "LOCK1" + "\t" + "ID" + "\t" + "TIPODOC" + "\t" + "NODOC" + "\t" + "NOMBRE" + "\t" + "DIRECCION" + "\t" + "LOCK2" + "\n";
+                    rtActData.Text += "IDCASE" + "\t" + "RADNUMBER" + "\t" + "IDTASK" +"\t" +  "LOCK1" + "\t" + "ID" + "\t" + "TIPODOC" + "\t" + "NODOC" + "\t" + "NOMBRE" + "\t" + "DIRECCION" + "\t" + "LOCK2" + "\n";
 
 
                 while ((LineaCaptura = FileCaptura.ReadLine()) != null)
