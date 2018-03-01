@@ -48,20 +48,25 @@ namespace NewRobot2GJWinF
                     this.Solution2();
             }
 
-            if ((this.IdTask == 59330) && (this.Code == "891") &&
+            if ((this.IdTask == 59330 || this.IdTask == 64234) && (this.Code == "891") &&
                 (this.Error == "ValidationException: Verifique el nombre del destinatario, se esperaba un nombre superior a 4 caracteres"))
             {
                 this.Solution3();
             }
 
-            if ((this.IdTask == 64234) && (this.Code == "891") &&
-                (this.Error == "ValidationException: Verifique la Dirección, se esperaba una dirección superior a 5 carcteres"))
+            if ((this.IdTask == 64234) && 
+                (this.Code == "891") &&
+                (this.Retry != true) &&
+                ((this.Error == "ValidationException: Verifique la Dirección, se esperaba una dirección superior a 5 carcteres") ||
+                (this.Error == "ValidationException: Verifique el nombre del destinatario, se esperaba un nombre superior a 4 caracteres")))
             {
                 this.ActualizacionData1();
             }
 
             if ((this.IdTask == 59330) && (this.Code == "891") &&
-                (this.Error == "ValidationException: Verifique la Dirección, se esperaba una dirección superior a 5 carcteres"))
+                (this.Retry != true) &&
+                ((this.Error == "ValidationException: Verifique la Dirección, se esperaba una dirección superior a 5 carcteres") ||
+                (this.Error == "ValidationException:Verifique el nombre del destinatario, se esperaba un nombre superior a 4 caracteres")))
             {
                 this.ActualizacionData2();
             }
@@ -451,7 +456,7 @@ namespace NewRobot2GJWinF
 
             //M_cat_Reconocimiento.IdM_RC01Reconocimiento.IdM_DatosActividad.RC01_DtosAct_Notificar[IdP_TipoNotificante.SCodigo = '02']
             CapaSOA2GJ.CapaFacade2GJ objFac = new CapaSOA2GJ.CapaFacade2GJ();
-            String tmp1 = "SELECT WFC.idcase, WFC.radnumber, WFC.IDWORKFLOW, CAT.IDM_CAT_RECONOCIMIENTO, RC.IDM_RC01_RECONOCIMIENTO, ACT.IDM_RC01_DATOSACTIVIDAD, PN.IDM_RC01_PERSONASNOTIFICAR, PN.IDP_TIPONOTIFICANTE, PN.IDP_TIPODOCUMENTO, PN.SNUMERODOCUMENTO, PN.SPRIMERNOMBRE, PN.SDIRECCION FROM WFCASE WFC INNER JOIN PVAPP PV ON WFC.IDCASE = PV.IDCASE INNER JOIN M_CAT_RECONOCIMIENTO CAT ON PV.M_CAT_RECONOCIMIENTO = CAT.IDM_CAT_RECONOCIMIENTO INNER JOIN M_RC01_RECONOCIMIENTO RC ON CAT.IDM_RC01RECONOCIMIENTO = RC.IDM_RC01_RECONOCIMIENTO INNER JOIN M_RC01_DatosActividad ACT ON RC.IDM_DATOSACTIVIDAD = ACT.IDM_RC01_DATOSACTIVIDAD INNER JOIN M_RC01_PersonasNotificar PN ON PN.RC01_DatosActividad = ACT.IDM_RC01_DATOSACTIVIDAD LEFT JOIN P_TipoNotificante P1 ON PN.IdP_TipoNotificante = P1.IDP_TIPONOTIFICANTE WHERE P1.SCODIGO = '02' AND LEN(SPrimerNombre) < 5 AND WFC.IDCASE = " + this.IdCase;
+            String tmp1 = "SELECT WFC.idcase, WFC.radnumber, WFC.IDWORKFLOW, CAT.IDM_CAT_RECONOCIMIENTO, RC.IDM_RC01_RECONOCIMIENTO, ACT.IDM_RC01_DATOSACTIVIDAD, PN.IDM_RC01_PERSONASNOTIFICAR, PN.IDP_TIPONOTIFICANTE, PN.IDP_TIPODOCUMENTO, PN.SNUMERODOCUMENTO, PN.SPRIMERNOMBRE, PN.SDIRECCION FROM WFCASE WFC INNER JOIN PVAPP PV ON WFC.IDCASE = PV.IDCASE INNER JOIN M_CAT_RECONOCIMIENTO CAT ON PV.M_CAT_RECONOCIMIENTO = CAT.IDM_CAT_RECONOCIMIENTO INNER JOIN M_RC01_RECONOCIMIENTO RC ON CAT.IDM_RC01RECONOCIMIENTO = RC.IDM_RC01_RECONOCIMIENTO INNER JOIN M_RC01_DatosActividad ACT ON RC.IDM_DATOSACTIVIDAD = ACT.IDM_RC01_DATOSACTIVIDAD INNER JOIN M_RC01_PersonasNotificar PN ON PN.RC01_DatosActividad = ACT.IDM_RC01_DATOSACTIVIDAD LEFT JOIN P_TipoNotificante P1 ON PN.IdP_TipoNotificante = P1.IDP_TIPONOTIFICANTE WHERE LEN(SPrimerNombre) < 5 AND WFC.IDCASE = " + this.IdCase;
             DataSet DS = objFac.QryFastByDS(tmp1);
 
 
